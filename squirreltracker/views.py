@@ -66,6 +66,38 @@ def sighting_update(request,unique_squirrel_id):
         return redirect('all_sightings')
    return render(request, 'squirreltracker/update_sighting.html', {'create_sighting':form})
 
+# View: Sighting stats
+def sighting_stats(request):
+    from django.db.models import Sum, Count
+
+    total_sightings = Sighting.objects.count()
+    AM = Sighting.objects.filter(shift='AM').count()
+    PM = Sighting.objects.filter(shift='PM').count()
+    Adult = Sighting.objects.filter(age='Adult').count()
+    Juvenile = Sighting.objects.filter(age='Juvenile').count()
+    color_Gray = Sighting.objects.filter(primary_fur_color='Gray').count()
+    color_Black = Sighting.objects.filter(primary_fur_color='Black').count()
+    color_Cinnamon = Sighting.objects.filter(primary_fur_color='Cinnamon').count()
+    above_ground = Sighting.objects.filter(location='Above Ground').count()
+    ground_plane = Sighting.objects.filter(location='Ground Plane').count()
+    running_squirrels = Sighting.objects.filter(running=True).count()
+
+    context = {
+            'AM' : AM,
+            'PM' : PM,
+            'total_sightings': total_sightings,
+            'Adult': Adult,
+            'Juvenile': Juvenile,
+            'color_Gray': color_Gray,
+            'color_Black': color_Black,
+            'color_Cinnamon': color_Cinnamon,
+            'above_ground': above_ground,
+            'ground_plane': ground_plane,
+            'running_squirrels': running_squirrels,
+            }
+
+    return render(request, 'squirreltracker/sighting_stats.html', context)
+
 # Create markers on map
 def map(request):
     sightings = Sighting.objects.all()
