@@ -1,3 +1,6 @@
+import csv 
+import datatime
+
 from squirreltracker.models import Sighting
 
 from django.core.management.base import BaseCommand
