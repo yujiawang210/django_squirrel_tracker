@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 from SquirrelTracker.models import Sighting
+=======
+import csv
+
+from squirreltracker.models import Sighting
+>>>>>>> 86a12488904ce09e06c53c5e9c4cdc5abf807bf8
   
 class Command(BaseCommand):
 
