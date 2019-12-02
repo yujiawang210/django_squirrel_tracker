@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'SquirrelTracker/sightings.html' %}
+{% load static %}
+{% block content %}
+
+<center>
+<h1>Create a Sighting</h1>
+<form method="post">{% csrf_token %}
+         <table class ='w-50 table table-light' style = "border-radius:10px; background-color:#D6E9FF;">
+                 {% for field in create_sighting %}
+                 <tr>
+                         <th>{{field.label}}</th>
+                         <td>{{  field    }}</td>
+                 </tr>
+                {% endfor %}
+        </table>
+        <input type="submit" value="Submit" />
+</form>
+</center>
+
+{% endblock %}
