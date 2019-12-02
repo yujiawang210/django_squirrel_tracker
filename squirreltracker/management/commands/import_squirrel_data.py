@@ -1,7 +1,11 @@
+<<<<<<< HEAD
+from SquirrelTracker.models import Sighting
+=======
 import csv 
 import datetime
 
 from squirreltracker.models import Sighting
+>>>>>>> 86a12488904ce09e06c53c5e9c4cdc5abf807bf8
 
 from django.core.management.base import BaseCommand
 
@@ -66,6 +70,13 @@ class Command(BaseCommand):
                     runs_from=runs_from,
                     )
 
+<<<<<<< HEAD
+                try:
+                    new_sighting.save()
+                except:
+                     print("There was a problem with line ", row)
+=======
                 new_sighting.save()
+>>>>>>> 86a12488904ce09e06c53c5e9c4cdc5abf807bf8
 
 
