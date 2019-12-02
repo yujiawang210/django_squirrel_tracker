@@ -11,7 +11,7 @@ def all_sightings(request):
     context = {
             'sightings': sightings,
     }
-    return render(request, 'SquirrelTracker/sightings.html', context)
+    return render(request, 'squirreltracker/sightings.html', context)
 
 # Create markers on map
 def map(request):
@@ -19,4 +19,4 @@ def map(request):
     context = {
             'sightings': sightings,
     }
-    return render(request, 'SquirrelTracker/map.html',context)
+    return render(request, 'squirreltracker/map.html',context)
