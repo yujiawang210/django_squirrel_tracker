@@ -1,3 +1,5 @@
+import csv
+
 from squirreltracker.models import Sighting
   
 class Command(BaseCommand):

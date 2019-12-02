@@ -1,5 +1,5 @@
 import csv 
-import datatime
+import datetime
 
 from squirreltracker.models import Sighting
 
@@ -66,9 +66,6 @@ class Command(BaseCommand):
                     runs_from=runs_from,
                     )
 
-                try:
-                    new_sighting.save()
-                except:
-                     print("There was a problem with line ", row)
+                new_sighting.save()
 
 
