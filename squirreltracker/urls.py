@@ -24,5 +24,7 @@ urlpatterns = [
     path('sightings/',include([
         path('add', views.sighting_create, name='create-sighting'),
         path('<str:unique_squirrel_id>', views.sighting_update, name='update-sighting'),
+        path('stats/',views.sighting_stats, name='sighting-stats'),
+        ])),
     path('map/', views.map),
 ]
