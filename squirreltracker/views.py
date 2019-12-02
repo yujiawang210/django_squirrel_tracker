@@ -49,7 +49,7 @@ def sighting_create(request):
     if form.is_valid():
         form.save()
         return redirect('all_sightings')
-    return render(request, 'SquirrelTracker/create_sighting.html', {'create_sighting':form})
+    return render(request, 'squirreltracker/create_sighting.html', {'create_sighting':form})
 
 # View: Update sighting
 def sighting_update(request,unique_squirrel_id):
@@ -64,7 +64,7 @@ def sighting_update(request,unique_squirrel_id):
        return redirect('all_sightings')
    elif 'Cancel' in request.POST:
         return redirect('all_sightings')
-   return render(request, 'SquirrelTracker/update_sighting.html', {'create_sighting':form})
+   return render(request, 'squirreltracker/update_sighting.html', {'create_sighting':form})
 
 # Create markers on map
 def map(request):
