@@ -20,5 +20,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sightings/', views.all_sightings, name='all_sightings'),
+    path('sightings/',include([
+        path('add', views.sighting_create, name='create-sighting'),
+        path('<str:unique_squirrel_id>', views.sighting_update, name='update-sighting'),
     path('map/', views.map),
 ]
