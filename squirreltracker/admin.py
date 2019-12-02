@@ -1,5 +1,5 @@
 from django.contrib import admin
   
-from SquirrelTracker.models import Sighting
+from squirreltracker.models import Sighting
 
 admin.site.register(Sighting)
