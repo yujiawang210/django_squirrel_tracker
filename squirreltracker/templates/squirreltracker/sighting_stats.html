@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'SquirrelTracker/sightings.html' %}
+{% load static %}
+{% block content %}
+
+<html>
+<head>
+    <title>Sighting_stats</title>
+</head>
+<body style="background_color: #4DB6AC;">
+<ol>
+    <li>Total sighting:{{total_sightings}}</li>
+    <li>Number of Squirrels Spotted in the Morning:{{AM}}</li>
+    <li>Number of Squirrels Spotted in the Afternoon:{{PM}}</li>
+    <li>Number of Adult Squirrels:{{Adult}}</li>
+    <li>Number of Juvenile Squirrels:{{Juvenile}}</li>
+    <li>Number of Gray Fur Squirrels:{{color_Gray}}</li>
+    <li>Number of Black Fur Squirrels:{{color_Black}}</li>
+    <li>Number of Cinnamon Fur Squirrels:{{color_Cinnamon}}</li>
+    <li>Number of Squirrels above ground: {{above_ground}} </li>
+    <li>Number of Squirrels on ground plane: {{ground_plane}} </li>
+    <li>Number of Running Squirrels:{{running_squirrels}}</li>
+</ol>
+</body>
+</html>
+
+{% endblock %}
+
