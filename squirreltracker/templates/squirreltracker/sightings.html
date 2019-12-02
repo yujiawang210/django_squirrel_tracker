@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sighting</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body>
+<nav class="navbar navbar-light" style="background-color:#A7C1EE;color=#FFFFFD;">
+        <center>Squirrel Tracker</center>
+</nav>
+<nav class="navbar navbar-light" style="background-color:#D6E9FF;">
+    <a href="{% url 'sighting-stats' %}" class="navbar-link btn-lg" style="color:#000000;">Sighting Statistics</a>
+</nav>
+<nav class="navbar navbar-light" style="background-color:#D6E9FF;">
+    <a href="{% url 'create-sighting' %}" class="navbar-link btn-lg" style="color:#000000;">Create a Sighting</a>
+</nav>
+<br>
+{% block content %}
+<center>
+<table class="table table-striped table-bordered table-sm">
+       <thead class="thead-dark">
+               <tr>
+                       <th>Unique Squirrel ID</th>
+                       <th>Latitude</th>
+                       <th>Longitude</th>
+                       <th>Date</th>
+                       <th>Age</th>
+                       <th>Primary Fur Color</th>
+                       <th>Location</th>
+                       <th>Action</th>
+                </tr>
+       </thead>
+       <tbody>
+               {% for sighting in sightings %}
+               <tr>
+                       <td>{{ sighting.unique_squirrel_id }}</td>
+                       <td>{{ sighting.latitude }}</td>
+                       <td>{{ sighting.longitude}}</td>
+                       <td>{{ sighting.date}}</td>
+                       <td>{{ sighting.age }}</td>
+                       <td>{{ sighting.primary_fur_color }}</td>
+                       <td>{{ sighting.location }}</td>
+                       <td>
+                             <a href="/sightings/{{sighting.unique_squirrel_id}}" 
+                             class="btn btn-warning" id='{{sighting.unique_squirrel_id}}'>Edit</a>
+                       </td>
+               </tr>
+    {% endfor %}
+       </tbody>
+</table>
+</center>
+<br>
+{% endblock %}
+</body>
+</html>
+
