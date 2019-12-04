@@ -68,7 +68,11 @@ class Command(BaseCommand):
 
                 try:
                     new_sighting.save()
-                except:
-                     print("There was a problem with line ", row)
+                except IntegrityError:
+                    print(new_sighting.unique_squirrel_id + ' already exists!')
+
+        print('Done')
+
+
 
 
