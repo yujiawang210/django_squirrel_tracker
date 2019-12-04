@@ -46,8 +46,11 @@ def all_sightings(request):
 # View: Create new sighting
 def sighting_create(request):
     form = SightingForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+    if 'Create' in request.POST:
+        if form.is_valid():
+            form.save()
+            return redirect('all_sightings')
+    elif 'Cancel' in request.POST:
         return redirect('all_sightings')
     return render(request, 'squirreltracker/create_sighting.html', {'create_sighting':form})
 
