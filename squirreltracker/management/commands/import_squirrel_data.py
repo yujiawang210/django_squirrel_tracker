@@ -3,6 +3,7 @@ import datetime
 
 from squirreltracker.models import Sighting
 
+from django.db import IntegrityError
 from django.core.management.base import BaseCommand
 
 class Command(BaseCommand):
