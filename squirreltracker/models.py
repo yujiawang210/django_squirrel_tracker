@@ -14,11 +14,11 @@ class Sighting(models.Model):
     unique_squirrel_id = models.CharField(
             max_length=20,
             help_text = _("Unique_Squirrel_ID"),
+            unique = True,
             )
 
     PM = 'PM'
     AM = 'AM'
-    OTHER = 'other'
 
     SHIFT_CHOICES  = (
             (PM, 'PM'),
@@ -29,7 +29,7 @@ class Sighting(models.Model):
     shift = models.CharField(
             max_length = 10,
             choices = SHIFT_CHOICES,
-            default = OTHER,
+            default = '',
             )
 
     date = models.DateField(
@@ -49,7 +49,8 @@ class Sighting(models.Model):
     age = models.CharField(
             max_length = 10,
             choices = AGE_CHOICES,
-            default = OTHER,
+            default = '',
+            blank = True,
             )
 
     BLACK = 'Black'
@@ -66,7 +67,8 @@ class Sighting(models.Model):
     primary_fur_color = models.CharField(
             max_length = 20,
             choices = COLOR_CHOICES,
-            default = OTHER,
+            default = '',
+            blank = True,
             )
 
     ABOVE_GROUND = 'Above Ground'
@@ -81,7 +83,8 @@ class Sighting(models.Model):
     location = models.CharField(
             max_length = 20,
             choices = LOCATION_CHOICES,
-            default = OTHER,
+            default = '',
+            blank = True,
             )
 
     specific_location = models.CharField(
