@@ -25,9 +25,6 @@
                        <th>Latitude</th>
                        <th>Longitude</th>
                        <th>Date</th>
-                       <th>Age</th>
-                       <th>Primary Fur Color</th>
-                       <th>Location</th>
                        <th>Action</th>
                 </tr>
        </thead>
@@ -38,9 +35,6 @@
                        <td>{{ sighting.latitude }}</td>
                        <td>{{ sighting.longitude}}</td>
                        <td>{{ sighting.date}}</td>
-                       <td>{{ sighting.age }}</td>
-                       <td>{{ sighting.primary_fur_color }}</td>
-                       <td>{{ sighting.location }}</td>
                        <td>
                              <a href="/sightings/{{sighting.unique_squirrel_id}}" 
                              class="btn btn-warning" id='{{sighting.unique_squirrel_id}}'>Edit</a>
