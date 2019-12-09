@@ -19,4 +19,10 @@ The squirrel tracker application also includes the following management commands
 1) An import command that is used to import data from a csv file. The file path should be specified at the command line after the name of the management command. (i.e. $ python manage.py import_squirrel_data /path/to/file.csv)
 2) An export command that is used to export data in csv format. The file path should be specified at the command line after the name of the management command. (i.e. $ python manage.py export_squirrel_data /path/to/file.csv)
 
+Deployment Link: 
+https://my-project-ieor4501.appspot.com/sightings/
+
+GitHub Link:
+https://github.com/yujiawang210/squirreltracker.git
+
  
